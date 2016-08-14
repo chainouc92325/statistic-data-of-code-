@@ -16,7 +16,7 @@ void getDate(char * date)
 	struct tm * ptime;
 
 	time(&ts);
-	ptime = gmtime(&ts); //函数返回给定的统一世界时间
+	ptime = localtime(&ts); //函数返回给定的统一世界时间
 	month = ptime->tm_mon + 1;
 	day = ptime->tm_mday;
 	sprintf(date, "%02d%02d", month, day);
